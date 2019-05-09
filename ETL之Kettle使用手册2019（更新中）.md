@@ -308,7 +308,7 @@ for (var i=0;i<getInputRowMeta().size();i++) { //loop through the actual row
 * 处理前数据
   
 |member|groupsField|
-|-|-|-|-|
+|-|-|
 |Member 1|	Group1, Group2, Group3, Group4|
 |Member 2|	Group1, Group2|
 
