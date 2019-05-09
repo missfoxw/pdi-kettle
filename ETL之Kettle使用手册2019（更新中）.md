@@ -637,7 +637,7 @@ JDK1.8不支持了。
 |  *Author* |missfox|
 |  *Date*   |2019-04-18 11:16:00|
 |  *Email*  |missfoxw@16com|
-|  *说明*   |新增文档（案例vscode写markdown）|
+|  *说明*   |新增文档（安利vscode写markdown）|
 
 [返回顶部↑](#myTitle)
 
