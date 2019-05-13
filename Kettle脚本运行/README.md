@@ -11,7 +11,7 @@ Kettle开发的脚本分为转换(trans)如：`test.ktr` 和作业(job)如：`te
 ### 3.1. 如何后台运行
 #### 3.1.1. linux例子
 使用资源库`myRepo`，作业的相对路径为`dataSync/finally-Sync-testTable`，我们可以新建脚本`Run.sh`，脚本内容如下：
-```sh
+```shell
 #!/bin/sh -l
 #======================SetVar====================================
 # 执行日期
