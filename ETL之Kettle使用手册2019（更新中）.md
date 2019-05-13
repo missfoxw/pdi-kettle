@@ -119,9 +119,7 @@ Kettle家族几个常用的产品：
 ### 2.1. ODBC方式
 **不推荐**，jdk8以上不支持odbc。
 #### 2.1.1. ODBC连Oracle
-* Windows机器安装oracle客户端(也可在官网下载Oracle的Odbc包)，创建ODBC数据源
-
-详细见官网 [创建一般 ODBC 连接](https://docs.oracle.com/middleware/bidvhelp/desktop/zh_CN/BIDVD/GUID-13FE85B3-AEEC-4A2E-AD23-EDD4810EF4CE.htm#BIDVD-GUID-13FE85B3-AEEC-4A2E-AD23-EDD4810EF4CE)。
+* Windows机器安装oracle客户端(也可在官网下载Oracle的Odbc包)，创建ODBC数据源，详见官网 [创建一般 ODBC 连接](https://docs.oracle.com/middleware/bidvhelp/desktop/zh_CN/BIDVD/GUID-13FE85B3-AEEC-4A2E-AD23-EDD4810EF4CE.htm#BIDVD-GUID-13FE85B3-AEEC-4A2E-AD23-EDD4810EF4CE)。
 * 填写数据库信息，点击测试连接，输入账号密码测试通过
 * 在Spoon界面新建连接，选择Oracle+ODBC方式连接,注意DSN和创建的数据源名称一致
 #### 2.1.2. ODBC连Informix
