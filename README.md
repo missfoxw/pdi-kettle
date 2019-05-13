@@ -2,9 +2,9 @@
 ## [整理使用Kettle过程中积累的知识点（更新中）](/ETL之Kettle使用手册2019（更新中）.md)
 > 注：不讲安装，安装入门移步[KETTLE安装配置](https://www.cnblogs.com/missfox18/p/7215062.html)
 
-* 1. 写在前面的话
+* [1. 写在前面的话](/ETL之Kettle使用手册2019（更新中）.md)
 ---
-* [2. Kettle连接数据库](Kettle连接数据库/README.md)
+* [2. Kettle连接数据库2019年5月9日](Kettle连接数据库/README.md)
 	* 2.1. ODBC方式
 		* 2.1.1. ODBC连Oracle
 		* 2.1.2. ODBC连Informix
@@ -18,7 +18,7 @@
 		* 2.4.1. JNDI连Oracle
 		* 2.4.2. JNDI连h2
 ---
-* [3. Kettle脚本运行](Kettle脚本运行/README.md)
+* [3. Kettle脚本运行2019年5月13日](Kettle脚本运行/README.md)
 	* 3.1. 如何后台运行
 		* 3.1.1. linux例子
 		* 3.1.2. windows例子
@@ -26,7 +26,7 @@
 	* 3.3. 关于日志等级说明(/logfile)
 	* 3.4. 转换日志输出说明
 ---
-* 4. JavaScript组件 
+* [4. JavaScript组件 ](JavaScript组件/README.md)
 	* 4.1. 获取变量 
 	* 4.2. EncryptPassword
 	* 4.3. 获取数据库信息 
@@ -39,9 +39,9 @@
 	* 4.10. JS日志输出 
 	* 4.11. 导出导入资源库
 ---
-* 5. Java相关组件
+* [5. Java相关组件](Java相关组件/README.md)
 ---
-* 6. 我的案例积累
+* [6. 我的案例积累](我的案例积累/README.md)
 	* 6.1. 数据库迁移  
 	* 6.2. 调用webService接口处理数据入库
 	* 6.3. 增量同步 
@@ -60,17 +60,17 @@
 		* 6.9.2. 分组聚合 
 		* 6.9.3. 过滤去重 
 ---
-* 7. 常用调度方案
+* [7. 常用调度方案](常用调度方案/README.md)
 	* 7.1. 任务计划定时
 	* 7.2. Crontab任务 
 	* 7.3. Jenkins  
 	* 7.4. 其他  
 ---
-* 8. 完整的开发实例 
+* [8. 完整的开发实例](完整的开发实例/README.md)
 	* 8.1. 一次基于资源库和Jenkins调度的Linux开发案例
 	* 8.2. 一次基于命名参数Windows开发案例  
 ---
-* 9. 常遇到的问题集锦  
+* [9. 常遇到的问题集锦](常遇到的问题集锦/README.md)  
 	* 9.1. 安装相关 
 		* 9.1.1. JVM提示不能正常启动  
 	* 9.2. 资源库相关  
