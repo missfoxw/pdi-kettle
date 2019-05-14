@@ -68,22 +68,25 @@ rem %KETTLE_HOME%\pan.bat -rep=%KettleBase% -user=admin -pass=admin -trans=%Tran
 $KETTLE_HOME/kitchen.sh -file /opt/pdi/dataSync/finaly-test.kjb -level Basic -logfile /opt/pdi/log/dataSync/2019041_test.log
 ```
 * 关于执行参数说明(pan和Kitchen相似，以下是Kitchen执行参数)
-  - /rep        : repository name
-  - /user       : repository username
-  - /pass       : repository password
-  - /job        : the name of the job to launch
-  - /dir        : the directory (dont forget the leading /)
-  - /file       : the filename (job xml) to launch
-  - /level      : the logging level (basic, detailed, debug, rowlevel, error, nothing)
-  - /logfile    : the logging file to write to
-  - /listdir    : list the directories in the repository
-  - /listjobs   : list the jobs in the specified directory
-  - /listrep    : list the available repositories
-  - /norep      : do not log into the repository
-  - /version    : show the version, revision and build date
-  - /param      : set a named parameter <name>=<value>. for example -param:foo=bar
-  - /listparam  : list information concerning the defined parameters in the specified job.
-  - /export     : exports all linked resources of the specified job. the argument is the name of a zip file.
+
+|参数|说明|
+|-|-|
+|/rep       |repository name|
+|/user      |repository username|
+|/pass      |repository password|
+|/job       |the name of the job to launch|
+|/dir       |the directory (dont forget the leading /)|
+|/file      |the filename (job xml) to launch|
+|/level     |the logging level (basic, detailed, debug, rowlevel, error, nothing)|
+|/logfile   |the logging file to write to|
+|/listdir   |list the directories in the repository|
+|/listjobs  |list the jobs in the specified directory|
+|/listrep   |list the available repositories|
+|/norep     |do not log into the repository|
+|/version   |show the version, revision and build date|
+|/param     |set a named parameter <name>=<value>. for example -param:foo=bar|
+|/listparam |list information concerning the defined parameters in the specified job.|
+|/export    |exports all linked resources of the specified job. the argument is the name of a zip file.|
 
 ### 3.3. 关于日志等级说明(/logfile)
 
@@ -107,3 +110,4 @@ $KETTLE_HOME/kitchen.sh -file /opt/pdi/dataSync/finaly-test.kjb -level Basic -lo
 * W: 当前步骤向后面步骤抛出的记录数
 * U: 当前步骤更新过的记录数
 * E: 当前步骤处理出错的记录数
+  
