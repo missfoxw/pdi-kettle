@@ -26,7 +26,7 @@
 	* 3.3. 关于日志等级说明(/logfile)
 	* 3.4. 转换日志输出说明
 ---
-* [4. JavaScript组件 ](JavaScript组件/README.md)
+* [4. JavaScript组件]-2019年5月14日(JavaScript组件/README.md)
 	* 4.1. 获取变量 
 	* 4.2. EncryptPassword
 	* 4.3. 获取数据库信息 
@@ -39,7 +39,7 @@
 	* 4.10. JS日志输出 
 	* 4.11. 导出导入资源库
 ---
-* [5. Java相关组件](Java相关组件/README.md)
+* [5. Java相关组件]-2019年5月14日（ing）(Java相关组件/README.md)
 ---
 * [6. 我的案例积累](我的案例积累/README.md)
 	* 6.1. 数据库迁移  
