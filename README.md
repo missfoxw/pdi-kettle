@@ -4,7 +4,7 @@
 
 * [1. 写在前面的话](/ETL之Kettle使用手册2019（更新中）.md)
 ---
-* [2. Kettle连接数据库2019年5月9日](Kettle连接数据库/README.md)
+* [2. Kettle连接数据库-2019年5月9日](Kettle连接数据库/README.md)
 	* 2.1. ODBC方式
 		* 2.1.1. ODBC连Oracle
 		* 2.1.2. ODBC连Informix
@@ -18,7 +18,7 @@
 		* 2.4.1. JNDI连Oracle
 		* 2.4.2. JNDI连h2
 ---
-* [3. Kettle脚本运行2019年5月13日](Kettle脚本运行/README.md)
+* [3. Kettle脚本运行-2019年5月13日](Kettle脚本运行/README.md)
 	* 3.1. 如何后台运行
 		* 3.1.1. linux例子
 		* 3.1.2. windows例子
