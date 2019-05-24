@@ -1,14 +1,13 @@
-# pdi-Kettle
-## [整理使用Kettle过程中积累的知识点（更新中）](/ETL之Kettle使用手册2019（更新中）.md)
+## pdi-Kettle
+整理使用Kettle过程中积累的知识点
 整理使用Kettle过程中积累的知识点（更新中）
 > 注：不讲安装，安装入门移步[KETTLE安装配置](https://www.cnblogs.com/missfox18/p/7215062.html)
 
-## 写在前面的话
+### 写在前面的话
 * [1. 写在前面的话](/ETL之Kettle使用手册2019（更新中）.md)
----
-* [2. Kettle连接数据库-2019年5月9日](Kettle连接数据库/README.md)
 
-## Kettle连接数据库-2019年5月9日
+
+### Kettle连接数据库-2019年5月9日
 * [2. Kettle连接数据库](Kettle连接数据库/README.md)
 	* [2.1. ODBC方式](Kettle连接数据库/README.md#21-odbc方式)
 		* [2.1.1. ODBC连Oracle](Kettle连接数据库/README.md#211-odbc连oracle)
@@ -22,30 +21,8 @@
 	* [2.4. JNDI方式](Kettle连接数据库/README.md)
 		* [2.4.1. JNDI连Oracle](Kettle连接数据库/README.md#241-jndi连oracle)
 		* [2.4.2. JNDI连h2](Kettle连接数据库/README.md#242-jndi连h2)
----
-* [3. Kettle脚本运行-2019年5月13日](Kettle脚本运行/README.md)
-	* [3.1. 如何后台运行](Kettle脚本运行/README.md)
-		* 3.1.1. linux例子
-		* 3.1.2. windows例子
-	* [3.2. 例子说明](Kettle脚本运行/README.md)
-	* [3.3. 关于日志等级说明(/logfile)](Kettle脚本运行/README.md)
-	* [3.4. 转换日志输出说明](Kettle脚本运行/README.md)
----
-* [4. JavaScript组件-2019年5月14日](JavaScript组件/README.md)
-	* [4.1. 获取变量](JavaScript组件/README.md)
-	* [4.2. EncryptPassword](JavaScript组件/README.md)
-	* [4.3. 获取数据库信息](JavaScript组件/README.md)
-	* [4.4. JS循环处理判断](JavaScript组件/README.md)
-	* [4.5. 字段处理](JavaScript组件/README.md)
-	* [4.6. 行数据新增/复制](JavaScript组件/README.md)
-	* [4.7. 时间转换](JavaScript组件/README.md)
-	* [4.8. bytes转换](JavaScript组件/README.md)
-	* [4.9. JS弹出框输入](JavaScript组件/README.md)
-	* [4.10. JS日志输出](JavaScript组件/README.md)
-	* [4.11. 导出导入资源库](JavaScript组件/README.md)
----
 
-## Kettle脚本运行-2019年5月13日
+### Kettle脚本运行-2019年5月13日
 - [3. Kettle脚本运行](Kettle脚本运行/README.md#3-kettle%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C)
   - [3.1. 如何后台运行](Kettle脚本运行/README.md#31-%E5%A6%82%E4%BD%95%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C)
     - [3.1.1. linux例子](Kettle脚本运行/README.md#311-linux%E4%BE%8B%E5%AD%90)
@@ -54,7 +31,7 @@
   - [3.3. 关于日志等级说明(/logfile)](Kettle脚本运行/README.md#33-%E5%85%B3%E4%BA%8E%E6%97%A5%E5%BF%97%E7%AD%89%E7%BA%A7%E8%AF%B4%E6%98%8Elogfile)
   - [3.4. 转换日志输出说明](Kettle脚本运行/README.md#34-%E8%BD%AC%E6%8D%A2%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E8%AF%B4%E6%98%8E)
 
-## JavaScript组件-2019年5月14日
+### JavaScript组件-2019年5月14日
 * [4. JavaScript组件](JavaScript组件/README.md#4-javascript组件)
   * [4.1. 获取变量](JavaScript组件/README.md#41-获取变量)
   * [4.2. EncryptPassword](JavaScript组件/README.md#42-encryptpassword)
@@ -68,11 +45,10 @@
   * [4.10. JS日志输出](JavaScript组件/README.md#410-js日志输出)
   * [4.11. 导出导入资源库](JavaScript组件/README.md#411-导出导入资源库)
 
-## Java相关组件
+### Java相关组件
 * [5. Java相关组件](Java相关组件/README.md)
----
 
-## 我的案例积累
+### 我的案例积累
 * [6. 我的案例积累](我的案例积累/README.md)
 	* 6.1. 数据库迁移  
 	* 6.2. 调用webService接口处理数据入库
@@ -91,21 +67,16 @@
 		* 6.9.1. 行列转换 
 		* 6.9.2. 分组聚合 
 		* 6.9.3. 过滤去重 
----
 
-## 常用调度方案
+### 常用调度方案
 * [7. 常用调度方案](常用调度方案/README.md)
 	* 7.1. 任务计划定时
 	* 7.2. Crontab任务 
 	* 7.3. Jenkins  
 	* 7.4. 其他  
----
-* [8. 完整的开发实例-2019年5月24日](完整的开发实例/README.md)
-	* [8.1. 一次基于命名参数和任务计划定时的Windows开发案例](完整的开发实例/README.md)
-	* [8.2. 一次基于资源库和jenkin调度的Linux开发案例](完整的开发实例/README.md)
----
 
-## 完整的开发实例-2019年5月24日
+
+### 完整的开发实例-2019年5月24日
 - [8. 完整的开发实例](完整的开发实例/README.md#8-%E5%AE%8C%E6%95%B4%E7%9A%84%E5%BC%80%E5%8F%91%E5%AE%9E%E4%BE%8B)
   - [8.1. 一次基于命名参数和任务计划定时的Windows开发案例](完整的开发实例/README.md#81-%E4%B8%80%E6%AC%A1%E5%9F%BA%E4%BA%8E%E5%91%BD%E5%90%8D%E5%8F%82%E6%95%B0%E5%92%8C%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E5%AE%9A%E6%97%B6%E7%9A%84windows%E5%BC%80%E5%8F%91%E6%A1%88%E4%BE%8B)
     - [8.1.1. 前言](完整的开发实例/README.md#811-%E5%89%8D%E8%A8%80)
@@ -155,7 +126,7 @@
     - [8.2.4. 迁移至生产环境](完整的开发实例/README.md#824-%E8%BF%81%E7%A7%BB%E8%87%B3%E7%94%9F%E4%BA%A7%E7%8E%AF%E5%A2%83)
     - [8.2.5. 生产调度运行](完整的开发实例/README.md#825-%E7%94%9F%E4%BA%A7%E8%B0%83%E5%BA%A6%E8%BF%90%E8%A1%8C)
 
-## 常遇到的问题集锦
+### 常遇到的问题集锦
 * [9. 常遇到的问题集锦](常遇到的问题集锦/README.md)  
 	* 9.1. 安装相关 
 		* 9.1.1. JVM提示不能正常启动  
@@ -168,5 +139,3 @@
 		* 9.3.3. Informix中文乱码  
 	* 9.4. 跨平台相关  
 		* 9.4.1. 迁移到Linix日志乱码  
----
-
