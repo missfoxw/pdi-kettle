@@ -1,9 +1,12 @@
 # pdi-Kettle
+## [整理使用Kettle过程中积累的知识点（更新中）](/ETL之Kettle使用手册2019（更新中）.md)
 整理使用Kettle过程中积累的知识点（更新中）
 > 注：不讲安装，安装入门移步[KETTLE安装配置](https://www.cnblogs.com/missfox18/p/7215062.html)
 
 ## 写在前面的话
 * [1. 写在前面的话](/ETL之Kettle使用手册2019（更新中）.md)
+---
+* [2. Kettle连接数据库-2019年5月9日](Kettle连接数据库/README.md)
 
 ## Kettle连接数据库-2019年5月9日
 * [2. Kettle连接数据库](Kettle连接数据库/README.md)
@@ -19,6 +22,28 @@
 	* [2.4. JNDI方式](Kettle连接数据库/README.md)
 		* [2.4.1. JNDI连Oracle](Kettle连接数据库/README.md#241-jndi连oracle)
 		* [2.4.2. JNDI连h2](Kettle连接数据库/README.md#242-jndi连h2)
+---
+* [3. Kettle脚本运行-2019年5月13日](Kettle脚本运行/README.md)
+	* [3.1. 如何后台运行](Kettle脚本运行/README.md)
+		* 3.1.1. linux例子
+		* 3.1.2. windows例子
+	* [3.2. 例子说明](Kettle脚本运行/README.md)
+	* [3.3. 关于日志等级说明(/logfile)](Kettle脚本运行/README.md)
+	* [3.4. 转换日志输出说明](Kettle脚本运行/README.md)
+---
+* [4. JavaScript组件-2019年5月14日](JavaScript组件/README.md)
+	* [4.1. 获取变量](JavaScript组件/README.md)
+	* [4.2. EncryptPassword](JavaScript组件/README.md)
+	* [4.3. 获取数据库信息](JavaScript组件/README.md)
+	* [4.4. JS循环处理判断](JavaScript组件/README.md)
+	* [4.5. 字段处理](JavaScript组件/README.md)
+	* [4.6. 行数据新增/复制](JavaScript组件/README.md)
+	* [4.7. 时间转换](JavaScript组件/README.md)
+	* [4.8. bytes转换](JavaScript组件/README.md)
+	* [4.9. JS弹出框输入](JavaScript组件/README.md)
+	* [4.10. JS日志输出](JavaScript组件/README.md)
+	* [4.11. 导出导入资源库](JavaScript组件/README.md)
+---
 
 ## Kettle脚本运行-2019年5月13日
 - [3. Kettle脚本运行](Kettle脚本运行/README.md#3-kettle%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C)
@@ -45,6 +70,7 @@
 
 ## Java相关组件
 * [5. Java相关组件](Java相关组件/README.md)
+---
 
 ## 我的案例积累
 * [6. 我的案例积累](我的案例积累/README.md)
@@ -65,6 +91,7 @@
 		* 6.9.1. 行列转换 
 		* 6.9.2. 分组聚合 
 		* 6.9.3. 过滤去重 
+---
 
 ## 常用调度方案
 * [7. 常用调度方案](常用调度方案/README.md)
@@ -72,6 +99,11 @@
 	* 7.2. Crontab任务 
 	* 7.3. Jenkins  
 	* 7.4. 其他  
+---
+* [8. 完整的开发实例-2019年5月24日](完整的开发实例/README.md)
+	* [8.1. 一次基于命名参数和任务计划定时的Windows开发案例](完整的开发实例/README.md)
+	* [8.2. 一次基于资源库和jenkin调度的Linux开发案例](完整的开发实例/README.md)
+---
 
 ## 完整的开发实例-2019年5月24日
 - [8. 完整的开发实例](完整的开发实例/README.md#8-%E5%AE%8C%E6%95%B4%E7%9A%84%E5%BC%80%E5%8F%91%E5%AE%9E%E4%BE%8B)
@@ -136,4 +168,5 @@
 		* 9.3.3. Informix中文乱码  
 	* 9.4. 跨平台相关  
 		* 9.4.1. 迁移到Linix日志乱码  
+---
 
