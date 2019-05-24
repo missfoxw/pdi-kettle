@@ -6,17 +6,17 @@
 ---
 * [2. Kettle连接数据库-2019年5月9日](Kettle连接数据库/README.md)
 	* [2.1. ODBC方式](Kettle连接数据库/README.md#21-odbc方式)
-		* 2.1.1. ODBC连Oracle
-		* 2.1.2. ODBC连Informix
-	* [2.2. JDBC方式](Kettle连接数据库/README.md)
-		* 2.2.1. JDBC连Informix
-		* 2.2.2. JDBC连Oracle
-		* 2.2.3. JDBC连Impala
-	* [2.3. 通用数据库方式](Kettle连接数据库/README.md)
-		* 2.3.1. hsqlDB
+		* [2.1.1. ODBC连Oracle](Kettle连接数据库/README.md#211-odbc连oracle)
+		* [2.1.2. ODBC连Informix](Kettle连接数据库/README.md#212-odbc连informix)
+	* [2.2. JDBC方式](Kettle连接数据库/README.md#22-JDBC方式)
+		* [2.2.1. JDBC连Informix](Kettle连接数据库/README.md#221-jdbc连informix)
+		* [2.2.2. JDBC连Oracle](Kettle连接数据库/README.md#222-jdbc连oracle)
+		* [2.2.3. JDBC连Impala](Kettle连接数据库/README.md#223-jdbc连impala)
+	* [2.3. 通用数据库方式](Kettle连接数据库/README.md#23-通用数据库方式)
+		* [2.3.1. hsqlDB](Kettle连接数据库/README.md#231-hsqldb)
 	* [2.4. JNDI方式](Kettle连接数据库/README.md)
-		* 2.4.1. JNDI连Oracle
-		* 2.4.2. JNDI连h2
+		* [2.4.1. JNDI连Oracle](Kettle连接数据库/README.md#241-jndi连oracle)
+		* [2.4.2. JNDI连h2](Kettle连接数据库/README.md#242-jndi连h2)
 ---
 * [3. Kettle脚本运行-2019年5月13日](Kettle脚本运行/README.md)
 	* [3.1. 如何后台运行](Kettle脚本运行/README.md)
