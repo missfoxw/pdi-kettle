@@ -5,7 +5,7 @@
 * [1. 写在前面的话](/ETL之Kettle使用手册2019（更新中）.md)
 ---
 * [2. Kettle连接数据库-2019年5月9日](Kettle连接数据库/README.md)
-	* [2.1. ODBC方式](Kettle连接数据库/README.md)
+	* [2.1. ODBC方式](Kettle连接数据库/README.md#21-odbc方式)
 		* 2.1.1. ODBC连Oracle
 		* 2.1.2. ODBC连Informix
 	* [2.2. JDBC方式](Kettle连接数据库/README.md)
