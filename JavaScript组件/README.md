@@ -1,4 +1,3 @@
-
 * [4. JavaScript组件](#4-javascript组件)
 	* [4.1. 获取变量](#41-获取变量)
 	* [4.2. EncryptPassword](#42-encryptpassword)
@@ -11,6 +10,7 @@
 	* [4.9. JS弹出框输入](#49-js弹出框输入)
 	* [4.10. JS日志输出](#410-js日志输出)
 	* [4.11. 导出导入资源库](#411-导出导入资源库)
+
 
 ## 4. JavaScript组件
 Kettle支持使用JS组件，下面列出一些JS组件在转换中较常见的用法。
@@ -78,6 +78,7 @@ for (var i=0;i<getInputRowMeta().size();i++) { //loop through the actual row
 |Member 1|	Group1, Group2, Group3, Group4|
 |Member 2|	Group1, Group2|
 
+* 处理脚本
 ```js
 if (groupsField!=null) 
 {

@@ -11,7 +11,33 @@
   - [2.4. JNDI方式](#24-jndi%E6%96%B9%E5%BC%8F)
     - [2.4.1. JNDI连Oracle](#241-jndi%E8%BF%9Eoracle)
     - [2.4.2. JNDI连h2](#242-jndi%E8%BF%9Eh2)
-
+<style>
+  h1::before {
+    content:'// ';
+    color:#006d75;
+    font-size: 15px;
+  }
+  h2::before {
+    content:'// ';
+    color:#08979c;
+    font-size: 15px;
+  }
+  h3::before {
+    content:'/// ';
+    color:#13c2c2;
+    font-size: 15px;
+  }
+  h4::before {
+    content:'//// ';
+    color:#36cfc9;
+    font-size: 15px;
+  }
+  h5::before {
+    content:'//// ';
+    color:#5cdbd3;
+    font-size: 15px;
+  }
+</style>
 ## 2. Kettle连接数据库
 
 参见[PDI 学习3：数据库连接](https://www.cnblogs.com/missfox18/p/215340.html)。这里列出我用过的一些数据库供参考。
