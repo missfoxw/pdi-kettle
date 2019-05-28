@@ -1,33 +1,22 @@
-* [4. JavaScript组件](#4-javascript组件)
-	* [4.1. 获取变量](#41-获取变量)
-	* [4.2. EncryptPassword](#42-encryptpassword)
-	* [4.3. 获取数据库信息](#43-获取数据库信息)
-	* [4.4. JS循环处理判断](#44-js循环处理判断)
-	* [4.5. 字段处理](#45-字段处理)
-	* [4.6. 行数据新增/复制](#46-行数据新增复制)
-	* [4.7. 时间转换](#47-时间转换)
-	* [4.8. bytes转换](#48-bytes转换)
-	* [4.9. JS弹出框输入](#49-js弹出框输入)
-	* [4.10. JS日志输出](#410-js日志输出)
-	* [4.11. 导出导入资源库](#411-导出导入资源库)
 
-
-## 4. JavaScript组件
+# 4. JavaScript组件
 Kettle支持使用JS组件，下面列出一些JS组件在转换中较常见的用法。
-### 4.1. 获取变量
+## 4.1. 获取变量
 命名参数和变量的在js里获取。
 ```js
 //默认密码123456
 var palin_code=getVariable("PLAIN_CODE","123456");
 ```
-### 4.2. EncryptPassword
+
+## 4.2. EncryptPassword
 例如：Kettle数据库文件 .kjb 里 password 为加密结果。
 ```js
 //对应的palin_code：WYJCfw!208uIY
 //Encrypted 2be98af9f33edb182bc58fc2086886e3
 var encrypted_password = "Encrypted " + Packages.org.pentaho.di.core.encryption.Encr.encryptPassword(palin_code);
 ```
-### 4.3. 获取数据库信息
+
+## 4.3. 获取数据库信息
 ```js
 var db = _step_.getTransMeta().findDatabase("dbKettleName");
 
@@ -36,9 +25,11 @@ var url = db.getURL();
 //IP
 var hostname = db.getHostname();
 ```
-### 4.4. JS循环处理判断
+
+## 4.4. JS循环处理判断
 JS脚本会对每一个数据流操作，我们可以在某条数据处理完毕后停止。
 > `SKIP_TRANSFORMATION`, `ERROR_TRANSFORMATION`, `CONTINUE_TRANSFORMATION` 是TRANSFORMATION已经预先定义好的静态常量,不可更改。作用是过滤记录行，控制转换流程
+
 ```js
 trans_Status = CONTINUE_TRANSFORMATION;
 //获取当前js处理第几条流数据
@@ -49,8 +40,9 @@ if(getProcessCount("r")>5) {
     trans_Status = SKIP_TRANSFORMATION;
 }
 ```
-### 4.5. 字段处理
+## 4.5. 字段处理
 可以对每一条数据的每一个字段进行处理，比如以下例子对所有字符类型字段的数据处理：把'E'替换成 'M'。
+
 ```js
 //字段和字段类型的对象集合
 var a = getInputRowMeta();
@@ -69,7 +61,8 @@ for (var i=0;i<getInputRowMeta().size();i++) { //loop through the actual row
   }
 }
 ```
-### 4.6. 行数据新增/复制
+
+## 4.6. 行数据新增/复制
 该功能用来伪造数据（我确实干过）真的六到飞起。
 * 处理前数据
   
@@ -79,6 +72,7 @@ for (var i=0;i<getInputRowMeta().size();i++) { //loop through the actual row
 |Member 2|	Group1, Group2|
 
 * 处理脚本
+
 ```js
 if (groupsField!=null) 
 {
@@ -101,6 +95,7 @@ if (groupsField!=null)
 var subgroup = "";
 var ignore = "Y";
 ```
+
 * 处理后数据
   
 |member|groupsField|subgroup|ignore|
@@ -113,7 +108,8 @@ var ignore = "Y";
 |Member 2|	Group1, Group2|		Group1|N|
 |Member 2|	Group1, Group2|		Group2|N|
 |Member 2|	Group1, Group2|		|Y|
-### 4.7. 时间转换
+
+## 4.7. 时间转换
 一般周期运行的程序都会用到，支持js函数外，组件左侧列出了可用的已经定义的函数。
 ```js
 // 2019/04/1 16:20:2295
@@ -131,7 +127,9 @@ var interval = dateDiff(lastDay,now,'HH');
 var dat = DIR.Clone().rightstr(16).str2dat("yyyy_MM_dd_HH_mm");
 // 2006/0/21 00:09:00.000
 ```
-### 4.8. bytes转换
+
+## 4.8. bytes转换
+
 ```js
 var F1 = 'VGV4dCBmaWxlIGlucHV0';
 // binary:
@@ -141,7 +139,7 @@ var decString = new Packages.java.lang.String( bytes );
 // VGV4dCBmaWxlIGlucHV0
 var encString = new Packages.java.lang.String( Packages.org.apache.commons.codec.binary.Base6encodeBase64( decString.getBytes() ) );
 ```	
-### 4.9. JS弹出框输入
+## 4.9. JS弹出框输入
 sample里给的一个例子，弹出框输入开始日期和结束日期：
 ```js
 // This JavaScript asks for a start and ending date with text dialog boxes.
@@ -194,14 +192,14 @@ if(displayHasToBeDisposed) {
   display.dispose();
 }
 ```
-### 4.10. JS日志输出
+## 4.10. JS日志输出
 例如在第五行输出字符串：
 ```js
 if(getProcessCount("r") == 5) { 
   writeToLog('m',str);
 }
 ```
-### 4.11. 导出导入资源库
+## 4.11. 导出导入资源库
 ```js
 /*
  * 导出
