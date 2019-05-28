@@ -1,5 +1,5 @@
-## ETL-Kettle-使用心得
-web文档请访问[ETL工具-Kettle-使用手册(更新中)](https://missfoxw.github.io/pdi-kettle)
+## ETL工具-我的Kettle使用手册
+web文档请访问[ETL工具-我的Kettle使用手册(更新中)](https://missfoxw.github.io/pdi-kettle)
 整理使用Kettle过程中积累的知识点（更新中）
 > 注：不讲安装，安装入门移步[KETTLE安装配置](https://www.cnblogs.com/missfox18/p/7215062.html)
 
