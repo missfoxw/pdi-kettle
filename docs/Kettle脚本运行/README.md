@@ -1,15 +1,8 @@
-- [3. Kettle脚本运行](#3-kettle%E8%84%9A%E6%9C%AC%E8%BF%90%E8%A1%8C)
-  - [3.1. 如何后台运行](#31-%E5%A6%82%E4%BD%95%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C)
-    - [3.1.1. linux例子](#311-linux%E4%BE%8B%E5%AD%90)
-    - [3.1.2. windows例子](#312-windows%E4%BE%8B%E5%AD%90)
-  - [3.2. 例子说明](#32-%E4%BE%8B%E5%AD%90%E8%AF%B4%E6%98%8E)
-  - [3.3. 关于日志等级说明(/logfile)](#33-%E5%85%B3%E4%BA%8E%E6%97%A5%E5%BF%97%E7%AD%89%E7%BA%A7%E8%AF%B4%E6%98%8Elogfile)
-  - [3.4. 转换日志输出说明](#34-%E8%BD%AC%E6%8D%A2%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA%E8%AF%B4%E6%98%8E)
 
-## 3. Kettle脚本运行
+# 3. Kettle脚本运行
 Kettle开发的脚本分为转换(trans)如：`test.ktr` 和作业(job)如：`test.kjb` 。在Spoon可视化界面可运行调试转换和作业，Kettle提供Pan和Kitchen后台分别执行它们。
-### 3.1. 如何后台运行
-#### 3.1.1. linux例子
+## 3.1. 如何后台运行
+### 3.1.1. linux例子
 使用资源库`myRepo`，作业的相对路径为`dataSync/finally-Sync-testTable`，我们可以新建脚本`Run.sh`，脚本内容如下：
 ```shell
 #!/bin/sh -l
@@ -29,7 +22,8 @@ sh $KETTLE_HOME/kitchen.sh -rep=$KettleBase -user=admin -pass=admin -job=$JobFil
 # trans
 # sh $KETTLE_HOME/pan.sh -rep=$KettleBase -user=admin -pass=admin -trans=$TransFile -level=basic>>$LogFile
 ```
-#### 3.1.2. windows例子
+
+### 3.1.2. windows例子
 使用资源库`myRepo`，作业的相对路径为`dataSync/finally-Sync-testTable`，假如我们使用了一个命名参数`DT`，需要传入当前日期，我们可以新建脚本`Run.bat`，脚本内容如下：
 ```bat
 @echo off
@@ -53,7 +47,8 @@ rem ======================RunTrans==================================
 rem trans
 rem %KETTLE_HOME%\pan.bat -rep=%KettleBase% -user=admin -pass=admin -trans=%TransFile% -level=basic>> %LogFile%
 ```
-### 3.2. 例子说明
+
+## 3.2. 例子说明和执行参数
 * 作业和转换
     - job由kitchen脚本执行
     - trans由pan脚本执行
@@ -64,6 +59,7 @@ rem %KETTLE_HOME%\pan.bat -rep=%KettleBase% -user=admin -pass=admin -trans=%Tran
     - 不使用资源库需要使用作业和转换的绝对路径以及后缀
     - 使用资源库可以更好的管理数据链接，作业和转换；推荐使用资源库。
 * 以下是一个不使用资源库在linux上执行作业的例子
+
 ```sh
 $KETTLE_HOME/kitchen.sh -file /opt/pdi/dataSync/finaly-test.kjb -level Basic -logfile /opt/pdi/log/dataSync/2019041_test.log
 ```
@@ -88,7 +84,7 @@ $KETTLE_HOME/kitchen.sh -file /opt/pdi/dataSync/finaly-test.kjb -level Basic -lo
 |/listparam |list information concerning the defined parameters in the specified job.|
 |/export    |exports all linked resources of the specified job. the argument is the name of a zip file.|
 
-### 3.3. 关于日志等级说明(/logfile)
+## 3.3. 关于日志等级说明
 
 日志输出共分七个等级：没有日志`Nothing`、错误日志`Error`、最小日志`Minimal`、基本日志`Basic`、详细日志`Detailed`、调试日志`Debug`、行级日志`Rowlevel`。默认为基本日志。
 
@@ -102,7 +98,7 @@ $KETTLE_HOME/kitchen.sh -file /opt/pdi/dataSync/finaly-test.kjb -level Basic -lo
 * Debug: 调试目的，调试输出
 * Rowlevel: 打印出每一行记录的信息
 
-### 3.4. 转换日志输出说明
+## 3.4. 转换日志输出说明
 下面是一个基本日志输出的例子：
 * I: 当前步骤生成的记录数（从表输入、文件读入）
 * O: 当前步骤输出的记录数（输出到文件、表）
