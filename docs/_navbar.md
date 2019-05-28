@@ -1,6 +1,6 @@
 * 下载↓
-  * [KETTLE](http://www.baidu.com)
-  * [JDK](http://www.baidu.com)
+  * [KETTLE](https://community.hitachivantara.com/docs/DOC-1009855)
+  * [JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 * 数据库❤
   * [Kettle连接数据库](Kettle连接数据库/README.md)
