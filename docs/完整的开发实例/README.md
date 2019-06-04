@@ -1,21 +1,21 @@
-# **8. 完整的开发实例**
+<!-- ## **8. 完整的开发实例** -->
 从部署到维护，分别给出Linux和Windows平台的两个例子，仅供参考。
-# 8.1. 一次Windows开发案例
-## 8.1.1. 前言
+## 8.1. 一次Windows开发案例
+### 8.1.1. 前言
 一次基于命名参数和任务计划定时的Windows开发案例
-### 8.1.1.1. 环境
+#### 8.1.1.1. 环境
 本机win10 64位 + Informix
 
-### 8.1.1.2. 业务说明
+#### 8.1.1.2. 业务说明
 周期性每天从SFTP取日志文件解析入库。其中，SFTP服务器多个，采集的文件和最终解析都一致。
-## 8.1.2. 设计
-### 8.1.2.1. 流程组件设计
+### 8.1.2. 设计
+#### 8.1.2.1. 流程组件设计
 基本流程很简单，我们分两步：
 1. 获取文件：可以在作业中使用SFTP组件 
 2. 解析文件入库：可以在转换中使用文本文件输入和表输出组件
 
 我们设计一个子转换，命名为 **GetDataFromZipFile** ，这个转换主要是读取下载的文件，解析入库；我们设计一个作业，命名为 **GetDataFromSFTPZipFile** ，下载文件，调用自转换解析入库。
-### 8.1.2.2. 关键点设计
+#### 8.1.2.2. 关键点设计
 有几个点需要注意：
 1. 流程需要支持数据补采：针对下载的文件已存在就覆盖，针对入库的数据，入库前需要先删除
 2. 下载的文件包含日期关键因素，如文件名 yyyyMMdd_xxxxxx.zip
@@ -23,7 +23,7 @@
 4. 周期性的日期也需要设计在入库表中
 5. 不同服务器的信息作为参数传递
 
-### 8.1.2.3. 即将用到的组件
+#### 8.1.2.3. 即将用到的组件
 * 作业
     - 通用 - START
     - 文件传输 - SFTP下载
@@ -34,9 +34,9 @@
     - 脚本 - JavaScript代码
     - 输出 - 表输出
 
-## 8.1.3. 开发
+### 8.1.3. 开发
 
-### 8.1.3.1. 数据结构
+#### 8.1.3.1. 数据结构
 对日志信息这里简单定义为一个字段log_info
 ```sql
 create table operlog_cszywg_new(
@@ -48,7 +48,7 @@ create table operlog_cszywg_new(
 );
 ```
 
-### 8.1.3.2. 定义文件
+#### 8.1.3.2. 定义文件
 - 新建文件夹 `program` 作为主文件夹
 - 新建 `log` 文件夹存储日志
 - 新建 `file` 文件夹存储下载的文件
@@ -59,7 +59,7 @@ create table operlog_cszywg_new(
 
 ![](img/programFile.png)
 
-### 8.1.3.3. 定义参数
+#### 8.1.3.3. 定义参数
 定义以下参数：
 
 |参数	|默认值	|描述|
@@ -73,7 +73,7 @@ create table operlog_cszywg_new(
 |REMOTE_PATH	||远程SFTP服务器上文件的路径|
 
 
-### 8.1.3.4. 作业流程
+#### 8.1.3.4. 作业流程
 
 - step1 作业设置
 
@@ -117,14 +117,14 @@ create table operlog_cszywg_new(
 ![](img/trans1.png)
 
 
-### 8.1.3.5. 子转换
-#### 8.1.3.5.1. 转换
+#### 8.1.3.5. 子转换
+##### 8.1.3.5.1. 转换
 
 我们这个作业相当于一个超级兵，他能获取下载的文件，并对数据处理入库。
 
 ![](img/trans2.png)
 
-#### 8.1.3.5.2. zip文件输入
+##### 8.1.3.5.2. zip文件输入
 * 文件
 
 注意 **文件/目录** 填写的是本地下载的文件目录。
@@ -153,21 +153,21 @@ create table operlog_cszywg_new(
 
 ![](img/zipInput5.png)
 
-#### 8.1.3.5.3. 数据处理
+##### 8.1.3.5.3. 数据处理
 FTP_IP和日期均为父作业传过来的，我们用 JavaScript代码组件获取这两个数据，并给每一行数据新增两个相应字段。顺便，我们把 上一步输入的 **详细信息** 赋值给 `LOG_INFO` 和数据库字段对应。
 
 ![](img/js.png)
 
-#### 8.1.3.5.4. 表输出
+##### 8.1.3.5.4. 表输出
 由于上一步输入的数据各字段和表字段一致，我们不需要指定数据库字段。批量提交可以更快更稳定的输出数据。
 - [ ] 指定数据库字段
 - [X] 使用批量插入
 
 ![](img/output.png)
 
-## 8.1.4. 调度运行
+### 8.1.4. 调度运行
 
-### 8.1.4.1. 编写脚本
+#### 8.1.4.1. 编写脚本
 在E:\GetLogInfo\program新增脚本RunJob.bat
 ```bat
 @echo off
@@ -202,7 +202,7 @@ rem pause 运行脚本后暂停窗口
 * 在spoon页面点击运行后输入命名参数值进行测试
 * 或者双击脚本进行测试
 
-### 8.1.4.2. 任务计划
+#### 8.1.4.2. 任务计划
 
 1. 管理工具 - 任务计划程序 
 2. 新建文件夹GetLogInfo
@@ -213,9 +213,9 @@ rem pause 运行脚本后暂停窗口
 ![](img/runjob.png)
 
 
-# 8.2. 一次Linux开发案例
+## 8.2. 一次Linux开发案例
 一次基于资源库和jenkin调度的Linux开发案例
-## 8.2.1. 业务说明
+### 8.2.1. 业务说明
 从A数据库(oracle库，代号irms)增量更新数据到B数据库(informix，无代号)。
 * 如果irms数据不足4W，informix就不要它同步的数据了
 * irms库表和informix对应的表字段名字不完全相同但是需要更新的字段能一一对应
@@ -223,8 +223,8 @@ rem pause 运行脚本后暂停窗口
 * 不涉及时间，两库中的涉及表都是现网表，历史数据有其他快照处理
 
 
-## 8.2.2. 准备工作
-### 8.2.2.1. 开发环境
+### 8.2.2. 准备工作
+#### 8.2.2.1. 开发环境
 部署kettle，新增文件类型的资源库，新增目标和源数据库的数据链接
   - Windows Win10+64bit  
   - Kettle: Version7.1
@@ -236,7 +236,7 @@ rem pause 运行脚本后暂停窗口
 5. 右上角资源库管理新建一个文件夹类型的资源库，命名为test,默认用户密码均为admin;次数可以看到资源库文件夹：`Repository\test`
 6. 工具箱-资源库-探索资源库-连接，右上角+ 新增数据库两个连接：A. oracle B. informx
 
-### 8.2.2.2. 生产环境Kettle
+#### 8.2.2.2. 生产环境Kettle
 
 部署Kettle,配置JAVA_HOME和KETTLE_HOME
   * OS: CentOS release 6.5 (Final)
@@ -247,12 +247,12 @@ rem pause 运行脚本后暂停窗口
 2. 拷贝下载解压后的文件夹pdi-ce-7.1.0.0-12到Linux机器`/opt/test/pdi`目录下
 3. 配置环境变量，在`~/.cshrc`文件中新增如下片段，并使之生效
 ```shell
-######### Set Kettle&Java env ############
+########## Set Kettle&Java env ############
 setenv KETTLE_HOME /opt/test/pdi/pdi-ce-7.1.0.0-12/data-integration
 setenv JAVA_HOME /usr/java/jdk1.8.0_171-amd64
 ```
 
-### 8.2.2.3. 生产环境Jenkins
+#### 8.2.2.3. 生产环境Jenkins
 
 * 拷贝官网下载的jenkins.war 到Linux系统目录下：`/opt/test/jenkins/jenkins.war`
 * 执行一下脚本安装：(可根据实际情况给端口)
@@ -264,13 +264,13 @@ java ­jar jenkins.war ­­httpPort 10001 &
 
 ![jenkins](img/jenkins.png)
 
-## 8.2.3. 作业流程
+### 8.2.3. 作业流程
 设计三个文件：
 1. finally-Sync.kjb 主作业：挑起流程的大梁
 2. judgeSync.ktr 子转换：判断源数据库irms该表数据是否满4W
 3. syncFromIrms.ktr 子子转换：同步
 
-### 8.2.3.1. 涉及组件
+#### 8.2.3.1. 涉及组件
 * finally-Sync.kjb
   - 通用-START
   - 通用-转换
@@ -291,39 +291,39 @@ java ­jar jenkins.war ­­httpPort 10001 &
   * 输出-表输出
   * 输出-删除
 
-### 8.2.3.2. 作业
+#### 8.2.3.2. 作业
 finally-Sync.kjb，START开始流程第二步进入子转换judgeSync。
 
 ![job](case2-img/1-job.png)
 
-### 8.2.3.3. 子转换
+#### 8.2.3.3. 子转换
 
 judgeSync.ktr 从源库获取源表数据条数，判断是否符合同步条件。
 
 ![tran1](case2-img/2-trans.png)
-#### 8.2.3.3.1. 获取判断条件
+##### 8.2.3.3.1. 获取判断条件
 获取view表中数据数量：表输入控件获取count和40000比一个确切数值，如大于4W返回1，否则返回0；SQL如下：
 ```sql
 select (case when count(1)>40000 then 1 else 0 end) as cn
 from test_view
 ```
 
-#### 8.2.3.3.2. 具备同步条件
+##### 8.2.3.3.2. 具备同步条件
 判断Irms数据是否有4W条：判断上一步传入的CN，类型是Number,如果是1（大于4W）则满足同步条件，否则啥也不干。
 
 ![tran2-2](case2-img/2.3.png)
 
-#### 8.2.3.3.3. 同步Irms数据
+##### 8.2.3.3.3. 同步Irms数据
 
 满足同步条件后进入同目录下的子子转换
 
 ![tran2-3](case2-img/2.2.png)
 
-### 8.2.3.4. 子子转换
+#### 8.2.3.4. 子子转换
 syncFromIrms.ktr 获取目标表（targetTable）和源表（sourceTable）数据进行比较更新。
 
 ![tran3](case2-img/3-trans.png)
-#### 8.2.3.4.1. targetTable
+##### 8.2.3.4.1. targetTable
 从目标库（informix）的目标表查询数据,注意按照关键字进行排序
 
 > 注意：**比较前必须要排序**
@@ -333,7 +333,7 @@ select lac,ci,longitude,latitude
 from test_cell
 order by 1,2
 ```
-#### 8.2.3.4.2. sourceTable
+##### 8.2.3.4.2. sourceTable
 从源库irms（oracle）的源表查询数据：可以在这里将字段别名和目标库要同步字段一一对应（也可以在下一步选择/改名值对字段进行改名）；注意按照关键字进行排序（和目标库排序顺序一致）
 
 
@@ -343,7 +343,7 @@ select irms_lac as lac ,irms_ci as ci,irms_long as longitude,irms_lat as latitud
 from test_view
 order by irms_lac,irms_ci
 ```
-#### 8.2.3.4.3. 调整数据类型
+##### 8.2.3.4.3. 调整数据类型
 这个步骤可以做两件事，我们做了其中一件：对字段类型进行统一（oracle-->informix）；另一件事情是字段名字的统一，我们在上一步sql里别名处理了。类型处理如：
 
 ![tran3-tz](case2-img/3-tz.png)
@@ -353,12 +353,12 @@ order by irms_lac,irms_ci
 
 ![tran3.st](case2-img/3-st.png)
 
-#### 8.2.3.4.4. 比较记录
+##### 8.2.3.4.4. 比较记录
 通过关键字，对目标数据和源数据进行比较，比较结果标志字段命名为：flagfield；左边是匹配的关键字，关键字段两个数据源都有；右边是数据字段，需要从旧数据源更新到新数据源
 
 ![tran3.4](case2-img/3.4.png)
 
-#### 8.2.3.4.5. Switch/Case
+##### 8.2.3.4.5. Switch/Case
 对上一步骤的标志字段flagfield进行比较，比较类型为string
 - new 旧数据源有，新数据源没有，进行插入处理；
 - changed 旧数据源和新数据源都有，但是更新字段内容不同，进行更新处理；
@@ -369,7 +369,7 @@ order by irms_lac,irms_ci
 
 本机测试通过后咱们就可以迁移至生产环境了~
 
-## 8.2.4. 迁移至生产环境
+### 8.2.4. 迁移至生产环境
 * 将本地Repository文件夹拷贝到Linux机器`/opt/test/pdi`目录下，咱们开发的作业和转换都在`Repository/test`文件夹下了
 * 将本地`~\pdi-ce-7.1.0.0-12\data-integration\.kettle\repositories.xml`拷贝到Lunux对应目录下，修改其中对应的Repository路径，注意不要有变动（包括格式）
 ```xml
@@ -385,7 +385,7 @@ order by irms_lac,irms_ci
   </repository>  </repositories>
 ```
 
-## 8.2.5. 生产调度运行
+### 8.2.5. 生产调度运行
 * 访问`http://IP:10001`，登录操作页面
 * 左上角新建，新建一个item
 
