@@ -1,31 +1,56 @@
-## ETL工具-我的Kettle使用手册
-web文档请访问[ETL工具-我的Kettle使用手册(更新中)](https://missfoxw.github.io/pdi-kettle)
-整理使用Kettle过程中积累的知识点（更新中）
+#### 是什么
+
+
+Kettle是一个ETL工具，本文记录我在使用Kettle解决实际生产问题时积累的经验，有脚本和常用方案，有案例说明和常见问题，也有两个不同平台的完整开发案例记录。
+
+希望能让对Kettle感兴趣的朋友知道它能做什么，能帮助正在使用Kettle的朋友解决一些问题，也特别特别希望各位朋友提出意见或者修改编辑文档。文档托管在Github，欢迎编辑或者提意见。
+
+文档还在更新中，已更新的章节上标有日期。其他章节也列出了目录。
+
+web文档的访问地址是[ETL-Kettle使用手册(更新中)](https://missfoxw.github.io/pdi-kettle)
+整理使用Kettle过程中积累的知识点（更新中）。
+
 > 注：不讲安装，安装入门移步[KETTLE安装配置](https://www.cnblogs.com/missfox18/p/7215062.html)
 
-### 写在前面的话
-* [1. 写在前面的话](/b.md)
+<!-- #### 写在前面的话 -->
+* [写在前面](/b.md)
+  * 什么是ETL
+  * Kettle都有哪些产品
+  * Kettle如何快速入门。
 
-### Kettle连接数据库-2019年5月9日
-* [2. Kettle连接数据库](Kettle连接数据库/README.md)
+#### 有什么
+记录的都是脚本组件，对JavaScript语言或有一些要求。
+<!-- #### Kettle连接数据库-2019年5月9日 -->
 
-### Kettle脚本运行-2019年5月13日
-- [3. Kettle脚本运行](Kettle脚本运行/README.md)
+* [Kettle连接数据库](Kettle连接数据库/README.md)-2019年5月9日
 
-### JavaScript组件-2019年5月14日
-* [4. JavaScript组件](JavaScript组件/README.md#4-javascript组件)
+<!-- #### Kettle脚本运行-2019年5月13日 -->
 
-### Java相关组件
-* [5. Java相关组件](Java相关组件/README.md)
+* [Kettle脚本运行](Kettle脚本运行/README.md)-2019年5月13日
 
-### 我的案例积累
-* [6. 我的案例积累](我的案例积累/README.md)
+<!-- #### JavaScript组件-2019年5月14日 -->
+* [JavaScript组件](JavaScript组件/README.md)-2019年5月14日
 
-### 常用调度方案
-* [7. 常用调度方案](常用调度方案/README.md)
+<!-- #### Java相关组件 -->
+* [Java组件](Java相关组件/README.md)
+<!-- #### 我的案例积累 -->
 
-### 完整的开发实例-2019年5月24日
-- [8. 完整的开发实例](完整的开发实例/README.md)
+#### 能做什么
+我用Kettle做过什么，效果如何。
 
-### 常遇到的问题集锦
-* [9. 常遇到的问题集锦](常遇到的问题集锦/README.md) 
+* [案例积累](我的案例积累/README.md)
+
+<!-- #### 常用调度方案 -->
+
+#### 方案 实例 问题
+
+* [常用调度方案](常用调度方案/README.md)
+
+<!-- #### 完整的开发实例-2019年5月24日 -->
+
+
+- [完整的开发实例](完整的开发实例/README.md)-2019年5月24日
+
+<!-- #### 常遇到的问题集锦 -->
+
+* [常遇问题集锦](常遇到的问题集锦/README.md) 

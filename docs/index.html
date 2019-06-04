@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>我的Kettle使用手册</title>
+  <title>ETL-Kettle使用手册</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -22,30 +22,86 @@
       }
     })(window)
   </script>
-  <link rel="stylesheet" href="css/buble.css">
+  <link rel="stylesheet" href="css/theme-simple.css">
   <style>
     nav.app-nav li ul {
       min-width: 100px;
+    }
+    nav.app-nav #nav_d::before{
+      content: url(img/云端下载.png)
+    }
+    nav.app-nav #nav_db::before{
+      content: url(img/储存.png)
+    }
+    nav.app-nav #nav_c::before{
+      content: url(img/设备开发.png)
+    }
+    nav.app-nav #nav_w::before{
+      content: url(img/功能定义.png)
+    }
+    nav.app-nav #nav_qa::before{
+      content: url(img/问题解答.png)
     }
   </style>
 </head>
 
 <body>
+
+  <nav class="app-nav no-badge">
+    <ul>
+      <li>
+        <p id="nav_d">下载</p>
+        <ul>
+          <li><a href="https://community.hitachivantara.com/docs/DOC-1009855" target="_blank">KETTLE</a></li>
+          <li><a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">JDK</a></li>
+        </ul>
+      </li>
+      <li>
+          <p id="nav_db">数据库</p>
+          <ul><li><a href="#/Kettle连接数据库/README">连接数据库</a></li></ul>
+      </li>
+      <li>
+        <p id="nav_c">组件和脚本</p>
+        <ul>
+          <li><a href="#/Kettle脚本运行/README">Kettle脚本运行</a></li>
+          <li><a href="#/JavaScript组件/README">JavaScript组件</a></li>
+          <li><a href="#/Java相关组件/README">Java组件</a></li>
+        </ul>
+      </li>
+      <li>
+        <p id="nav_w">实例</p>
+        <ul>
+          <li><a href="#/我的案例积累/README">案例积累</a></li>
+          <li><a href="#/常用调度方案/README">常用调度方案</a></li>
+          <li><a href="#/完整的开发实例/README">完整的开发实例</a></li>
+        </ul>
+      </li>
+      <li>
+        <p id="nav_qa">Q&amp;A</p>
+        <ul><li><a href="#/常遇到的问题集锦/README">常遇问题集锦</a></li></ul>
+      </li>
+    </ul>
+  </nav>
   <div id="app">Loading ...</div>
   <script>
     window.$docsify = {
-      alias: {
-        '/.*/_navbar.md': '/_navbar.md',
+      // alias: {
+      //   '/.*/_navbar.md': '/_navbar.md',
+      // },
+        pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
+        crossChapter: true
       },
       auto2top: true,
       coverpage: true,
       executeScript: true,
       loadSidebar: true,
-      loadNavbar: true,
-      mergeNavbar: true,
+      // loadNavbar: true,
+      // mergeNavbar: true,
       maxLevel: 4,
       subMaxLevel: 4,
-      name: '我的Kettle使用手册',
+      name: 'ETL-Kettle使用手册',
       search: {
         noData: {
           '/de-de/': 'Keine Ergebnisse!',
@@ -80,10 +136,10 @@
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
+  <!-- <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script> -->
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-markdown.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-nginx.min.js"></script>
-
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
 </body>
 </html>
