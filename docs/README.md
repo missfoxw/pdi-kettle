@@ -36,7 +36,7 @@ web文档的访问地址是[ETL-Kettle使用手册(更新中)](https://missfoxw.
 <!-- #### 我的案例积累 -->
 
 #### 能做什么
-我用Kettle做过什么，效果如何。
+用Kettle做过什么。
 
 * [案例积累](我的案例积累/README.md)
 

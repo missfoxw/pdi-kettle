@@ -35,23 +35,33 @@
 * 针对Informix中文乱码需要设置,对应服务器名称设置如：`$yourServerName$;;NEWCODESET=GBK,8859_1,819;`
 * 表输出预览数据乱码：勾选 允许简易转换
   
+![jdbc-informix](imgs/jdbc-informix.png)
+
 #### 2.2.2. JDBC连Oracle
 * 需要准备驱动包如：`ojdbc6.jar`
+
+![jdbc-oracle](imgs/jsdb-oracle.png)
 
 #### 2.2.3. JDBC连Impala
 * 需要准备驱动包如：`ImpalaJDBC41-2.6.4.jar`
 
 ### 2.3. 通用数据库方式
-本质上是jdbc方式
+本质上是jdbc方式，需要提供驱动和jdbc串。
 #### 2.3.1. hsqlDB
 * 下载相应的JDBC驱动,比如`hsqldb-jar`，放在`..\data-integration\lib` 目录下
 * 配置`Spoon`界面数据库连接
   - 连接方式选择`JDBC`
   - 连接类型选择通用数据库：`Generic database`
   - 连接名称如：`test_hsqlDB`
-  - URL如：`jdbc:hsqldb:hsql://IP:PORT;`
+  - URL（jdbc串）如：`jdbc:hsqldb:hsql://IP:PORT;`
   - 选择驱动名称：`org.hsqldb.jdbcDriver`( 刚刚的驱动包呐 )
   - 一般用户名 `sa` ,无密码；
+
+#### 2.3.2. h2
+* 驱动：`org.h2.Driver`
+* JDBC串：`jdbc:h2:file:E:\WorkSpace\Free\lpl\db\sampledb;IFEXISTS=TRUE`
+
+![h2](imgs/generic-h2.png)
 
 ### 2.4. JNDI方式
 > JNDI是 Java 命名与目录接口（Java Naming and Directory Interface），在J2EE规范中是重要的规范之一。
