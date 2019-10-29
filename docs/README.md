@@ -10,7 +10,7 @@ Kettle是一个ETL工具，本文记录我在使用Kettle解决实际生产问�
 web文档的访问地址是[ETL-Kettle使用手册(更新中)](https://missfoxw.github.io/pdi-kettle)
 整理使用Kettle过程中积累的知识点（更新中）。
 
-> 注：不讲安装，安装入门移步[KETTLE安装配置](https://www.cnblogs.com/missfox18/p/7215062.html)
+> 注：本文不包含安装，安装入门移步[KETTLE安装配置](https://www.cnblogs.com/missfox18/p/7215062.html)
 
 <!-- #### 写在前面的话 -->
 * [写在前面](/b.md)
@@ -19,7 +19,7 @@ web文档的访问地址是[ETL-Kettle使用手册(更新中)](https://missfoxw.
   * Kettle如何快速入门。
 
 #### 有什么
-记录的都是脚本组件，对JavaScript语言或有一些要求。
+
 <!-- #### Kettle连接数据库-2019年5月9日 -->
 
 * [Kettle连接数据库](Kettle连接数据库/README.md)-2019年5月9日
@@ -30,6 +30,8 @@ web文档的访问地址是[ETL-Kettle使用手册(更新中)](https://missfoxw.
 
 <!-- #### JavaScript组件-2019年5月14日 -->
 * [JavaScript组件](JavaScript组件/README.md)-2019年5月14日
+
+这章记录的都是脚本组件，对JavaScript语言或有一些要求。
 
 <!-- #### Java相关组件 -->
 * [Java组件](Java相关组件/README.md)
