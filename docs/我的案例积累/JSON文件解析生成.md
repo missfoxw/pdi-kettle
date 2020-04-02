@@ -68,15 +68,15 @@
 
 1. 选择JSON文件。
 
-![](json/JsonInput1.png)
+![](json/jsonInput1.png)
 
 2. 定义读取的的字段，注意数组符合`[]`,读取的时候使用`$.[*].` ，例如`"故障地点"`，路径写作`$.[*].故障地点`
 
-![](json/JsonInput2.png)
+![](json/jsonInput2.png)
 
 3. 点击预览，预览数据如图所示。
 
-![](json/JsonInput3.png)
+![](json/jsonInput3.png)
 
 * 表输出：使用表输出控件将字段 `故障地点，一级，二级，三级，四级，五级` 入库到表即可。
 
@@ -94,19 +94,19 @@
 
 开始之前我们用一个例子了解一下KETTLE的`JSON Output` 组件。
 
-![](json/JsonOutput1.png) 
+![](json/jsonOutput1.png) 
 
 * 测试数据-生成10条记录
 
-![](json/JsonOutput2.png) 
+![](json/jsonOutput2.png) 
 
 * 对生成的数据JSONOutput
 
-![](json/JsonOutput4.png) 
+![](json/jsonOutput4.png) 
 
 注意 `一个数据条目的数据行` 勾选 `0` ；`操作`步骤可选择输出文件，也可以选择 `Output value` ；对生成的数组条目加一个名称 ，如 `data`
 
-![](json/JsonOutput3.png) 
+![](json/jsonOutput3.png) 
 
 * 最终生成的数据如下
 
