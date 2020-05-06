@@ -11,7 +11,7 @@ var palin_code=getVariable("PLAIN_CODE","123456");
 ### 4.2. EncryptPassword
 例如：Kettle数据库文件 .kjb 里 password 为加密结果。
 ```js
-//对应的palin_code：WYJCfw!208uIY
+//对应的palin_code：********
 //Encrypted 2be98af9f33edb182bc58fc2086886e3
 var encrypted_password = "Encrypted " + Packages.org.pentaho.di.core.encryption.Encr.encryptPassword(palin_code);
 ```
